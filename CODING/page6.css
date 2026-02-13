@@ -1,0 +1,180 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Poppins,sans-serif;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ffe6f1,#f378ad,#fff0f6,#fba9c9);
+  background-size:300% 300%;
+  animation:bgShift 12s ease infinite;
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* ===== BACKGROUND BLINK-BLINK ===== */
+.bgHearts{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(230, 119, 175, 0.25) 0 8px, transparent 9px),
+    radial-gradient(circle at 70% 30%, rgba(255, 182, 193,0.2) 0 10px, transparent 11px),
+    radial-gradient(circle at 50% 80%, rgba(255, 192, 203,0.22) 0 9px, transparent 10px);
+  animation:bgFloat 12s linear infinite, bgBlink 3s ease-in-out infinite;
+}
+
+@keyframes bgShift{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+@keyframes bgFloat{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-80px)}
+  100%{transform:translateY(0)}
+}
+
+@keyframes bgBlink{
+  0%,100%{opacity:0.5}
+  50%{opacity:1}
+}
+
+/* WRAP */
+.wrap{
+  position:relative;
+  width:100%;
+  max-width:500px;
+  padding:60px 20px 40px;
+  background:white;
+  border-radius:30px;
+  box-shadow:0 15px 50px rgba(255,100,150,.25);
+  text-align:center;
+  z-index:2;
+}
+
+/* PHONE ANIMATION DI ATAS */
+.phoneAnim{
+  margin-bottom:30px; /* beri jarak dari judul */
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.phoneIcon{
+  font-size:100px; /* besar */
+  animation:phoneBounce 1.5s infinite;
+  z-index:2;
+}
+
+.ring1, .ring2{
+  position:absolute;
+  border:4px solid #ff4d88;
+  border-radius:50%;
+  width:120px;
+  height:120px;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) scale(0);
+  opacity:.5;
+  animation:ringPulse 2s infinite;
+}
+
+.ring2{
+  width:160px;
+  height:160px;
+  animation-delay:0.8s;
+  opacity:.35;
+}
+
+@keyframes phoneBounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-20px)}
+}
+
+@keyframes ringPulse{
+  0%{transform:translate(-50%,-50%) scale(0); opacity:.5}
+  50%{opacity:.2}
+  100%{transform:translate(-50%,-50%) scale(1); opacity:0}
+}
+
+h1{
+  color:#ff4d88;
+  margin-bottom:12px;
+}
+
+.sub{
+  color:#a14a6a;
+  margin-bottom:30px;
+  font-size:16px;
+}
+
+/* PLANNER */
+.planner{
+  text-align:left;
+  margin-bottom:30px;
+}
+
+.planner label{
+  display:block;
+  margin:12px 0 6px;
+  color:#ff4d88;
+  font-weight:600;
+}
+
+input{
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid #ffd0e4;
+  margin-bottom:15px;
+}
+
+/* BUTTON */
+button{
+  border:none;
+  padding:14px 28px;
+  border-radius:25px;
+  background:linear-gradient(45deg,#ff4d88,#ff9ec9);
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 10px 30px rgba(255,100,150,.35);
+  transition:.3s;
+}
+
+button:hover{
+  transform:scale(1.05);
+}
+
+/* POPUP */
+.popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.35);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:5;
+}
+
+.popupBox{
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+  animation:pop .3s ease;
+}
+
+@keyframes pop{
+  from{transform:scale(.7)}
+  to{transform:scale(1)}
+}

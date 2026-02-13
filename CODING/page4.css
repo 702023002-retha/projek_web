@@ -1,0 +1,130 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+min-height:100vh;
+overflow-y:auto;
+background:#fff0f6;
+display:flex;
+justify-content:center;
+}
+
+/* BG GRADIENT */
+
+.bg{
+position:fixed;
+inset:0;
+z-index:-1;
+background:linear-gradient(-45deg,#ffffff,#fae1eb,#f58cbb,#9f3660);
+background-size:400% 400%;
+animation:bgmove 12s infinite linear;
+opacity:.7;
+}
+
+@keyframes bgmove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+/* WRAP */
+
+.wrap{
+max-width:600px;
+width:95%;
+padding:40px 20px;
+text-align:center;
+}
+
+/* TITLE */
+
+h1{
+color:#ff4d88;
+margin-bottom:30px;
+}
+
+/* RATE BOX */
+
+.rateBox{
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 20px 40px rgba(255,100,150,.25);
+margin-bottom:20px;
+}
+
+#loveMeter{
+font-size:38px;
+font-weight:700;
+color:#ff2f7a;
+margin-bottom:10px;
+}
+
+input[type=range]{
+width:100%;
+}
+
+/* LOVE VISUAL */
+
+#loveVisual{
+margin:20px 0 10px;
+min-height:120px;
+font-size:28px;
+}
+
+/* DEEP TALK */
+
+.deepBox{
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 20px 40px rgba(255,100,150,.2);
+text-align:left;
+margin-top:20px;
+}
+
+.deepBox label{
+font-weight:600;
+color:#ff4d88;
+display:block;
+margin-top:15px;
+}
+
+textarea{
+width:100%;
+margin-top:8px;
+padding:12px;
+border-radius:12px;
+border:1px solid #ffd1e3;
+resize:vertical;
+min-height:70px;
+}
+
+/* BUTTON */
+
+button{
+margin-top:30px;
+border:none;
+padding:16px 30px;
+border-radius:22px;
+font-weight:600;
+background:linear-gradient(45deg,#ff4d88,#ff9ac6);
+color:white;
+cursor:pointer;
+box-shadow:0 12px 30px rgba(255,100,150,.35);
+font-size:16px;
+}
+#loveVisual{
+margin-top:20px;
+text-align:center;
+}
+
+@keyframes pulseLove{
+0%{transform:scale(1)}
+50%{transform:scale(1.18)}
+100%{transform:scale(1)}
+}

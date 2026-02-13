@@ -1,0 +1,93 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Poppins,sans-serif;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  position:relative;
+  background:linear-gradient(135deg,#fefefe,#f2d2e1,#e37ea7,#711137);
+  background-size:300% 300%;
+  animation:bgGradient 15s ease infinite;
+}
+
+/* GRADIENT BERGERAK & KELAP-KELIP */
+@keyframes bgGradient{
+  0%{background-position:0% 50%;}
+  25%{background-position:50% 0%;}
+  50%{background-position:100% 50%;}
+  75%{background-position:50% 100%;}
+  100%{background-position:0% 50%;}
+}
+
+/* WRAP */
+.wrap{
+  position:relative;
+  width:100%;
+  max-width:700px;
+  padding:60px 20px 40px;
+  background:rgba(255,255,255,0.95);
+  border-radius:30px;
+  box-shadow:0 15px 50px rgba(168, 111, 129, 0.25);
+  text-align:center;
+  z-index:2;
+  overflow:hidden;
+}
+
+/* LOVE BESAR DI TENGAH */
+.bigHeart{
+  font-size:160px;
+  animation:heartBeat 1.5s infinite;
+  margin-bottom:20px;
+  z-index:2;
+  position:relative;
+}
+
+@keyframes heartBeat{
+  0%,100%{transform:scale(1)}
+  25%{transform:scale(1.2)}
+  50%{transform:scale(1)}
+  75%{transform:scale(1.2)}
+}
+
+h1{
+  color:#a92a55;
+  font-size:26px;
+  margin-bottom:15px;
+  position:relative;
+  z-index:2;
+}
+
+.sub{
+  color:#f1adc5;
+  font-size:18px;
+  line-height:1.5;
+  position:relative;
+  z-index:2;
+}
+
+/* LOVE PARTICLES / SPRINKLE */
+.loveParticles{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+}
+
+.loveParticle{
+  position:absolute;
+  font-size:12px;
+  opacity:0.50; /* transparan biar nggak ganggu */
+  animation:fallParticle linear infinite;
+}
+
+@keyframes fallParticle{
+  0%{transform:translateY(100vh) rotate(0deg);}
+  100%{transform:translateY(-50px) rotate(360deg);}
+}

@@ -1,0 +1,153 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+/* ===== BG DRAMATIS SOFT ===== */
+
+body{
+min-height:100vh;
+overflow:hidden;
+
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+
+background:linear-gradient(120deg,
+#fff0f4,
+#ffd6e2,
+#f5b6c8,
+#eaa0b8,
+#fac8d7,
+#fff0f4);
+
+background-size:600% 600%;
+animation:bgSad 16s ease-in-out infinite;
+}
+
+@keyframes bgSad{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+/* ===== DECOR ===== */
+
+#bgDecor{
+position:fixed;
+inset:0;
+z-index:0;
+pointer-events:none;
+overflow:hidden;
+}
+
+/* broken hearts */
+
+.sadHeart{
+position:absolute;
+opacity:.25;
+animation:drop linear infinite;
+filter:grayscale(.2);
+}
+
+@keyframes drop{
+to{transform:translateY(110vh) rotate(10deg)}
+}
+
+/* rain sparkle */
+
+.rain{
+position:absolute;
+width:6px;
+height:14px;
+background:linear-gradient(#ffffffaa,#ffc0d9aa);
+border-radius:10px;
+opacity:.5;
+animation:rainFall linear infinite;
+}
+
+@keyframes rainFall{
+to{transform:translateY(110vh)}
+}
+
+/* ===== CARD ===== */
+
+.wrapper{
+position:relative;
+z-index:2;
+width:100%;
+display:flex;
+justify-content:center;
+}
+
+.card{
+max-width:420px;
+width:100%;
+
+background:rgba(255,255,255,.6);
+backdrop-filter:blur(18px);
+
+border-radius:28px;
+padding:36px;
+text-align:center;
+
+box-shadow:
+0 30px 80px rgba(200,80,120,.35),
+inset 0 0 0 1px rgba(255,255,255,.7);
+
+animation:pop .7s;
+}
+
+@keyframes pop{
+from{transform:scale(.85);opacity:0}
+to{transform:scale(1);opacity:1}
+}
+
+/* ===== TEXT ===== */
+
+.emoji{
+font-size:64px;
+margin-bottom:10px;
+animation:pulse 0s infinite;
+}
+
+@keyframes pulse{
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.)}
+}
+
+h2{
+color:#c2185b;
+margin-bottom:10px;
+}
+
+.msg{
+font-size:16px;
+line-height:1.5;
+opacity:.85;
+margin-bottom:24px;
+}
+
+/* ===== BUTTON ===== */
+
+button{
+border:none;
+padding:14px 26px;
+border-radius:20px;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+
+background:linear-gradient(45deg,#ff4d88,#ff8ec6);
+color:white;
+
+box-shadow:0 10px 30px rgba(255,105,150,.35);
+transition:.2s;
+}
+
+button:active{
+transform:scale(.92);
+}

@@ -1,0 +1,198 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+min-height:100vh;
+overflow-y:auto;
+background:linear-gradient(135deg,#fff0f6,#ffd6e8,#ffc2dd);
+display:flex;
+justify-content:center;
+}
+
+/* BG glow */
+
+.bgGlow{
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at 20% 20%, #ff9ec9 0 10px, transparent 11px),
+radial-gradient(circle at 70% 60%, #ffb3d1 0 12px, transparent 13px);
+opacity:.25;
+animation:bgMove 12s linear infinite;
+}
+
+@keyframes bgMove{
+0%{transform:translateY(0)}
+100%{transform:translateY(-200px)}
+}
+
+/* WRAP */
+
+.wrap{
+width:100%;
+max-width:900px;
+padding:40px 20px 80px;
+text-align:center;
+z-index:2;
+}
+
+h1{
+color:#ff4d88;
+margin-bottom:10px;
+}
+
+.sub{
+color:#a14a6a;
+margin-bottom:30px;
+}
+
+/* CARDS */
+
+.options{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:22px;
+margin-bottom:40px;
+}
+
+.card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+cursor:pointer;
+box-shadow:0 15px 40px rgba(255,100,150,.25);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px) scale(1.03);
+}
+
+.card img{
+width:100%;
+height:170px;
+object-fit:cover;
+}
+
+.card h3{
+color:#ff4d88;
+margin:12px 0 6px;
+}
+
+.card p{
+padding:0 14px 18px;
+font-size:14px;
+color:#555;
+}
+
+/* PLANNER */
+
+.planner{
+background:white;
+padding:24px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+margin-bottom:30px;
+text-align:left;
+}
+
+.planner label{
+display:block;
+margin:10px 0 6px;
+color:#ff4d88;
+font-weight:600;
+}
+
+input{
+width:100%;
+padding:12px;
+border-radius:12px;
+border:1px solid #ffd0e4;
+}
+
+/* BUTTON */
+
+button{
+border:none;
+padding:14px 28px;
+border-radius:20px;
+background:linear-gradient(45deg,#ff4d88,#ff9ec9);
+color:white;
+font-weight:600;
+cursor:pointer;
+box-shadow:0 10px 30px rgba(255,100,150,.35);
+}
+
+/* POPUP */
+
+.popup{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.35);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:5;
+}
+
+.popupBox{
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+animation:pop .3s ease;
+}
+
+@keyframes pop{
+from{transform:scale(.7)}
+to{transform:scale(1)}
+}
+/* ===== BODY BG ROMANTIC DYNAMIC ===== */
+
+body{
+min-height:100vh;
+overflow-y:auto;
+display:flex;
+justify-content:center;
+
+background:linear-gradient(135deg,#fff0f6,#ffd6e8,#ffc2dd,#ffe6f1);
+background-size:300% 300%;
+animation:bgShift 12s ease infinite;
+}
+
+@keyframes bgShift{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+
+/* ===== SOFT SPARKLE DECOR ===== */
+
+.bgGlow{
+position:fixed;
+inset:0;
+z-index:0;
+pointer-events:none;
+
+background:
+radial-gradient(circle at 10% 20%, rgba(229, 148, 178, 0.25) 0 6px, transparent 7px),
+radial-gradient(circle at 80% 30%, rgba(255,170,200,.25) 0 8px, transparent 9px),
+radial-gradient(circle at 30% 70%, rgba(210, 58, 124, 0.22) 0 7px, transparent 8px),
+radial-gradient(circle at 60% 85%, rgba(173, 38, 101, 0.25) 0 6px, transparent 7px),
+radial-gradient(circle at 50% 50%, rgba(236, 179, 200, 0.18) 0 10px, transparent 11px);
+
+opacity:.55;
+animation:bgFloat 10s linear infinite;
+filter:blur(.1px);
+}
+
+@keyframes bgFloat{
+0%{transform:translateY(0)}
+50%{transform:translateY(-60px)}
+100%{transform:translateY(0)}
+}

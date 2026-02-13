@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surat Untuk Kamu 💌</title>
+<link rel="stylesheet" href="page2.css">
+</head>
+
+<body>
+
+<!-- AUDIO MUSIK -->
+<audio id="loveMusic" src="KASIH PUTIH.mp3" preload="auto"></audio>
+
+<div id="bgSimple"></div>
+
+<div class="wrap">
+
+  <h2 class="title">💗 Klik Suratnya Sayang 💗</h2>
+
+  <!-- ENVELOPE -->
+  <div class="envelopeBox" onclick="openLetter()" id="envBox">
+
+    <div class="envelope">
+      <div class="flap"></div>
+      <div class="paper" id="paper">
+        <img src="foto-rafki.jpg" class="photo">
+      </div>
+    </div>
+  </div>
+
+  <!-- ROMANTIC TEXT -->
+  <div class="afterOpen" id="afterOpen">
+    <p id="typing"></p>
+    <button onclick="next()">What's the next?</button>
+  </div>
+
+</div>
+
+<script src="page2.js"></script>
+</body>
+</html>

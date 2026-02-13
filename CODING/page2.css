@@ -1,0 +1,182 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+/* ===== BACKGROUND GRADIENT BERKELIP ===== */
+
+body{
+min-height:100vh;
+overflow-y:auto;
+overflow-x:hidden;
+
+display:flex;
+justify-content:center;
+align-items:flex-start;
+padding:40px 16px;
+
+background:linear-gradient(120deg,
+#ffffff,
+#fff3f8,
+#ffd9e8,
+#fcc6da,
+#fed4e6,
+hsl(299, 72%, 85%));
+
+background-size:600% 600%;
+animation:bgBlink 14s ease-in-out infinite;
+}
+
+@keyframes bgBlink{
+0%{background-position:0% 50%}
+25%{background-position:100% 50%}
+50%{background-position:0% 100%}
+75%{background-position:100% 0%}
+100%{background-position:0% 50%}
+}
+
+/* SIMPLE DECOR LIGHT */
+
+#bgSimple{
+position:fixed;
+inset:0;
+opacity:.25;
+background:
+radial-gradient(circle at 20% 30%, #ffb3d1 0 6px, transparent 7px),
+radial-gradient(circle at 70% 60%, #ffc2dd 0 8px, transparent 9px);
+pointer-events:none;
+}
+
+/* LAYOUT */
+
+.wrap{
+text-align:center;
+z-index:2;
+padding:20px;
+}
+
+.title{
+color:#ff4d88;
+margin-bottom:30px;
+}
+
+/* ENVELOPE AREA */
+
+.envelopeBox{
+cursor:pointer;
+animation:bounce 2s infinite;
+position:relative;
+display:inline-block;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
+}
+
+.clickText{
+position:absolute;
+top:-28px;
+width:100%;
+font-size:14px;
+color:#ff4d88;
+font-weight:600;
+}
+
+/* ENVELOPE */
+
+.envelope{
+width:320px;
+max-width:90vw;
+height:210px;
+background:#ff6fa5;
+border-radius:14px;
+position:relative;
+box-shadow:0 25px 60px rgba(255,105,150,.45);
+overflow:hidden;
+z-index:2;
+}
+
+/* FLAP — PALING DEPAN */
+
+.flap{
+position:absolute;
+width:100%;
+height:100%;
+background:#ff8ec6;
+clip-path:polygon(0 0,100% 0,50% 65%);
+transform-origin:top;
+transition:.8s;
+border-radius:14px;
+z-index:3;
+}
+
+/* PAPER — DI DALAM */
+
+.paper{
+position:absolute;
+width:86%;
+left:7%;
+bottom:-90%;          /* tersembunyi di dalam */
+height:72%;
+background:white;
+border-radius:12px;
+display:flex;
+justify-content:center;
+align-items:center;
+transition:1s cubic-bezier(.22,1,.36,1);
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+z-index:1;
+}
+
+/* FOTO */
+
+.photo{
+width:80%;
+border-radius:16px;
+}
+
+/* ==== OPEN STATE ==== */
+
+.open .flap{
+transform:rotateX(180deg);
+}
+
+.open .paper{
+bottom:50%;              /* naik ke tengah */
+transform:translateY(50%);
+}
+
+/* AFTER OPEN */
+
+.afterOpen{
+display:none;
+margin-top:30px;
+max-width:420px;
+}
+
+.afterOpen p{
+font-size:16px;
+line-height:1.6;
+margin-bottom:20px;
+}
+
+/* BUTTON */
+
+button{
+border:none;
+padding:14px 28px;
+border-radius:20px;
+background:linear-gradient(45deg,#ff4d88,#ff8ec6);
+color:white;
+font-weight:600;
+cursor:pointer;
+box-shadow:0 10px 30px rgba(255,105,150,.35);
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}

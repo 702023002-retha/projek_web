@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QTime Call 💖</title>
+<link rel="stylesheet" href="page6.css">
+
+</head>
+<body>
+
+<div class="bgHearts"></div>
+
+<div class="wrap">
+
+  <!-- PHONE ANIMATION DI ATAS -->
+  <div class="phoneAnim">
+    <div class="phoneIcon">📱</div>
+    <div class="ring1"></div>
+    <div class="ring2"></div>
+  </div>
+
+  <h1>Let's QTime Call! 💞</h1>
+  <p class="sub">Pilih tanggal & jam, lalu kita ngobrol manis 💌</p>
+
+  <div class="planner">
+    <label>Tanggal 💌</label>
+    <input type="date" id="date">
+
+    <label>Jam ⏰</label>
+    <input type="time" id="time">
+  </div>
+
+  <button onclick="scheduleCall()">Schedule Call 💗</button>
+</div>
+
+<!-- POPUP KONFIRMASI -->
+<div id="popup" class="popup">
+  <div class="popupBox">
+    <h2 id="popupText"></h2>
+    <!-- Tombol OK diganti dinamis menjadi Next Surprised -->
+<button id="popupBtn" onclick="pdf()">Next Surprised 💖</button>
+  </div>
+</div>
+
+<script src="page6.js"></script>
+</body>
+</html>
